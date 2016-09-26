@@ -1,0 +1,29 @@
+
+ /* Selectores */
+/* 1.- Estiquetas */
+/* 2.- Identificadores */
+/* 3.- Clases */
+
+body /* SELECTOR - ETIQUETAS */
+{
+	/* ATRIBUTO:VALOR; */
+	border: 1px solid blue;
+	border-radius: 5px;
+	max-width: 1024px;
+}
+
+header
+{
+	background: blue; /* Fondo */
+	border: 1px solid red;
+	color: white; /* Letra */
+	text-align: center; /* Alineacion del texto */
+}
+
+header nav ul li
+{
+	/* border: 1px solid yellow; */
+	background: orange;
+	border-radius: 5px;
+	display: inline-block; /* Rompe el modelo de caja */
+}
