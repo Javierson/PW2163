@@ -9,6 +9,7 @@ body /* Selector - Etiquetas */
 	/* ATRIBUTO:VALOR; */
 	border: 1px solid blue;
 	border-radius: 5px;
+	margin: 0px auto;
 	max-width: 1024px;
 }
 
@@ -19,6 +20,13 @@ header
 	color: white; /* Letra */
 	/*padding: 0px 0px 10px 0px;*/
 	text-align: center; /* Alineacion del texto */
+}
+
+header img
+{
+	float: right;
+	margin: -60px 20px 0px 0px;
+	width: 100px; /* Ancho de la imagen */
 }
 
 header nav ul li
