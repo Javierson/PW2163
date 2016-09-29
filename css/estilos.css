@@ -9,6 +9,7 @@ body /* Selector - Etiquetas */
 	/* ATRIBUTO:VALOR; */
 	border: 1px solid blue;
 	border-radius: 5px;
+	font-size: 16px; /* Tamaño de la fuente estandar */
 	margin: 0px auto;
 	max-width: 1024px;
 }
@@ -46,4 +47,24 @@ header nav ul li:hover /* Mouse por encima */
 {
 	background: white; /* Color de fondo */
 	color: orange; /* Color de la letra */
+}
+
+main section
+{
+	margin: 15px 0px 0px 0px;
+}
+
+main section article
+{
+	/* border: 1px solid red; */
+	display: inline-block;
+	vertical-align: top;
+	width: 24%;
+}
+
+footer
+{
+	border: 1px solid blue;
+	font-size: 0.5em;
+	text-align: center; /* Alineamos todo el texto */
 }
