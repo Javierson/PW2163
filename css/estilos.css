@@ -1,8 +1,17 @@
 
- /* Selectores */
+/* Selectores */
+/* 0.- Directivas @ */
 /* 1.- Estiquetas */
 /* 2.- Identificadores */
 /* 3.- Clases */
+
+@font-family
+{
+	/* Nombre de la fuente */
+	font-family: 'Coming Soon';
+	/* En donde esta el archivo? */
+	src: url ('fuentes/Coming_Soom/ComingSoon.ttf');
+}
 
 body /* Selector - Etiquetas */
 {
@@ -23,6 +32,11 @@ header
 	text-align: center; /* Alineacion del texto */
 }
 
+header H1
+{
+	font-family: 'Roboto'; /* Agregamos la fuente al h1 */
+}
+
 header img
 {
 	float: right;
@@ -38,6 +52,7 @@ header nav ul li
 	box-shadow: 1px 1px;
 	display: inline-block; /* Rompe el modelo de caja */
 	/* margin: 0px 10px; */ /* Separo las cajas */
+	font-family: 'Open Sans';
 	margin: 0px 10px 50px 10px;
 	padding: 0px 10px; /* Agrando los botones */
 	width: 80px; /* Ancho del boton */
@@ -58,6 +73,7 @@ main section article
 {
 	/* border: 1px solid red; */
 	display: inline-block;
+	font-family: 'Roboto'; /* Se agrega la fuente descargada */
 	vertical-align: top;
 	width: 24%;
 }
