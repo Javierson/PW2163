@@ -46,6 +46,11 @@ header nav ul li
 	margin-left: 25px;
 }
 
+#mallinglist
+{
+	padding-top: 60px;
+}
+
 #paint
 {
 	float: right;
@@ -71,14 +76,25 @@ header nav ul li
 	text-align: right;
 }
 
-#secc01art01
+#seccion01aer01
 {
 	width: 60%;
 }
 
-#secc02art02
+#seccion01art02
 {
 	width: 30%;
+}
+
+#seccion01art02 ul
+{
+	list-style: none;
+}
+
+#seccion01art02 ul li:before
+{
+	content: "• ";
+	color: #FF0099;
 }
 
 #terceraseccion article
@@ -88,11 +104,36 @@ header nav ul li
 	width: 22%;
 }
 
+#terceraseccion article img
+{
+	vertical-align: middle;
+}
+
+.colorazul
+{
+	color: #16BEF8;
+}
+.colorrosa
+{
+	color: #F4A3C6;
+}
+
+.colorverde
+{
+	color: #A6DE47
+}
+
 .numerotelefono
 {
 	color: #FF0099;
 	font-size: 2em;
 	font-weight: bold;
+}
+
+.colorazul, .colorrosa, .colorverde
+{
+	font-size: 1.5em;
+	font-weight bold;
 }
 
 .wecanoffer
