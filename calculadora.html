@@ -5,9 +5,10 @@
 	<meta charset="UTF-8">
 	<title>Calculadora Basica</title>
 	<link rel="stylesheet" type="text/css" href="css/estiloscalculadora.css">
+	<script src="js/calculadora.js"></script>
 </head>
 <body>
-	<H1>Balculadora Basica</H1>
+	<H1>Calculadora Basica</H1>
 	<FORM ACTION="#" name="calculadora" ID="calculadora">
 		<TABLE>
 			<TR>
@@ -27,58 +28,58 @@
 			</TR>
 			<TR>
 				<TD>
-					<INPUT TYPE="button" value="7">
+					<INPUT TYPE="button" value="7" onclick="numeros(this.value);">
 				</TD>
 				<TD>
-					<INPUT TYPE="button" value="8">
+					<INPUT TYPE="button" value="8" onclick="numeros(this.value);">
 				</TD>
 				<TD>
-					<INPUT TYPE="button" value="9">
+					<INPUT TYPE="button" value="9" onclick="numeros(this.value);">
 				</TD>
 				<TD>
-					<INPUT TYPE="button" value="*">
-				</TD>
-			</TR>
-			<TR>
-				<TD>
-					<INPUT TYPE="button" value="4">
-				</TD>
-				<TD>
-					<INPUT TYPE="button" value="5">
-				</TD>
-				<TD>
-					<INPUT TYPE="button" value="6">
-				</TD>
-				<TD>
-					<INPUT TYPE="button" value="-">
+					<INPUT TYPE="button" value="*" onclick="operadores(this.value);">
 				</TD>
 			</TR>
 			<TR>
 				<TD>
-					<INPUT TYPE="button" value="1">
+					<INPUT TYPE="button" value="4" onclick="numeros(this.value);">
 				</TD>
 				<TD>
-					<INPUT TYPE="button" value="2">
+					<INPUT TYPE="button" value="5" onclick="numeros(this.value);">
 				</TD>
 				<TD>
-					<INPUT TYPE="button" value="3">
+					<INPUT TYPE="button" value="6" onclick="numeros(this.value);">
 				</TD>
 				<TD>
-					<INPUT TYPE="button" value="+">
+					<INPUT TYPE="button" value="-" onclick="operadores(this.value);">
 				</TD>
 			</TR>
 			<TR>
 				<TD>
-					<INPUT TYPE="button" value="CE">
+					<INPUT TYPE="button" value="1" onclick="numeros(this.value);">
 				</TD>
 				<TD>
-					<INPUT TYPE="button" value="0">
+					<INPUT TYPE="button" value="2" onclick="numeros(this.value);">
 				</TD>
 				<TD>
-					<INPUT TYPE="button" value="=">
+					<INPUT TYPE="button" value="3" onclick="numeros(this.value);">
 				</TD>
 				<TD>
-					<INPUT TYPE="button" value="/">
+					<INPUT TYPE="button" value="+" onclick="operadores(this.value);">
+				</TD>
+			</TR>
+			<TR>
+				<TD>
+					<INPUT TYPE="button" value="CE" onclick="limpiar();">
+				</TD>
+				<TD>
+					<INPUT TYPE="button" value="0" onclick="numeros(this.value);">
+				</TD>
+				<TD>
+					<INPUT TYPE="button" value="=" onclick="igual();">
+				</TD>
+				<TD>
+					<INPUT TYPE="button" value="/" onclick="operadores(this.value);">
 				</TD>
 			</TR>
 		</TABLE>
