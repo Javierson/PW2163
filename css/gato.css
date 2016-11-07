@@ -1,7 +1,6 @@
 
 body
 {
-	font-size: 1em;
 	margin: 0 auto;
 	max-width: 1024px;
 	text-align: center;
@@ -9,7 +8,7 @@ body
 
 form
 {
-	background: gray;
+	background: white;
 	border: 1px dashed black;
 	border-radius: 5px;
 	box-shadow: 15px 15px 15px rgba(50,50,50,.7);
@@ -20,13 +19,17 @@ form
 
 form input
 {
-	border-radius: 5px;
-	font-size: 1.7em;
+	/*background-size: 20px;*/
+	margin: 20px 20px;
 }
 
-form input type="button"
+form input[onclick="espacios(this.value);"]
 {
-	background: blue;
-	color: white;
-	width: 70px;
+	width: 40px;
+	height: 40px;
+}
+
+table
+{
+	margin: 0 auto;
 }
