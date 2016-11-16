@@ -5,7 +5,19 @@ var inicio = function() //main
 {
 	var dameClic = function()
 	{
-	alert("Le di clic a un boton");
+	// alert("Le di clic a un boton");
+
+	$.ajax({
+  	url: 'https://randomuser.me/api/',
+  	dataType: 'json',
+  	success: function(data) {
+  	// console.log(data.results[0].gender);
+  	$("#txtNombre").val(data.results[0].name.first + " " + data.results[0].name.last);
+  	$("#imgFoto").attr("src", data.results[0].picture.large);
+  	console.log(data.results[0].name.first + " " + data.results[0].name.last);
+  	}
+	});
+
 	}
 	$("#dameClic").on("click", dameClic);
 }
@@ -16,4 +28,4 @@ var inicio = function() //main
 	//Codigo o mas funciones
 //});
 
-$(document).on("ready", inicio()
+$(document).on("ready", inicio);
