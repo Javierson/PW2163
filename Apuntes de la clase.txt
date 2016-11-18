@@ -1,0 +1,13 @@
+
+/*
+X = Sistema operativo ( LAMPP, WAMPP, MAMPP ) = X
+A = APACHE = SERVIDOR WEB
+M
+P
+P
+*/
+
+utf8_general_ci
+
+<?php
+?>
