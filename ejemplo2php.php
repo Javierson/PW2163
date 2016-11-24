@@ -1,69 +1,6 @@
 
-<?php
-
-	$txtOculto = "";
-	$usuario = "";
-	$nombre = "";
-	$clave = "";
-	$tipo = "";
-
-	// Preguntar si los valores existen
-	if (isset($_POST["txtOculto"])) // Si trae valores
-	{
-		$oculto = $_POST["txtOculto"];
-	}
-	if (isset($_POST["txtUsuario"])) // Si trae valores
-	{
-		$usuario = $_POST["txtUsuario"];
-	}
-	if (isset($_POST["txtNombre"])) // Si trae valores
-	{
-		$usuario = $_POST["txtNombre"];
-	}
-	if (isset($_POST["txtClave"])) // Si trae valores
-	{
-		$usuario = $_POST["txtClave"];
-	}
-	if (isset($_POST["txtTipo"])) // Si trae valores
-	{
-		$usuario = $_POST["txtTipo"];
-	}
-
-	function guardaUsuario($usuario, $nombre, $clave, $tipo)
-	{
-		// Conectarse al servidor MySQL
-		// mysql_connect(servidor, usuario, contraseña)
-		$conexion = mysql_connect("localhost", "root", "");
-		// Seleccionamos la base de datos
-		mysql_select_db("bd2163");
-		$consulta = "insert into usuario valuee("'.$usuario."', ".$nombre.'"',".$clave"', ".$tipo")
-		// Ejecutamos la consulta
-		mysql_query($consulta);
-		// Preguntamos si hubo insercion
-		if (mysql_affected_rows() > 0)
-		{
-			print "Registro guardado";
-		}
-		else
-		{
-			print "No se pudo guardar el registro";
-		}
-	}
-
-	switch ($oculto) {
-		case 'guardaUsuario':
-			guardaUsuario($usuario, $nombre, $clave, $tipo);
-			break;
-		
-		default:
-			# code...
-			break;
-	}
-
-?>
-
 <h1>Alta de usuarios<h1>
-<form action="ejemplo2php.php" method="POST">
+<form action="registro_ejemplo.php" method="POST">
 	<input type="hidden" name="txtOculto" id="guardaUsuario">
 	<input type="text" name="txtUsuario" id="txtUsuario">
 	<input type="text" name="txtNombre" id="txtNombre">
@@ -75,3 +12,29 @@
 	</select> <br>
 	<input type="submit" value="Enviar">
 </form>
+<hr>
+
+<?php
+
+	// Conecto al servidor
+	$conexion = mysql_connect("localhost", "root", "");
+	mysql_select_db("bd2163");
+	$consulta = "Select * From Usiario Order by Usuario";
+	// Ejecutando consulta
+	$resultado = mysql_query($consulta);
+	$tabla = "<table border=1>";
+	$tabla = "<tr>";
+	$tabla = "<th>Usuario</th><th>Nombre</th><th>Clave</th><th>Tipo</th>";
+	$tabla = "</tr>";
+	while ( $resultado = mysql_query($resultado) ) {
+		$tabla.="<tr>"
+		$tabla.="td".$registro["Usuario"]."</td";
+		$tabla.="td".$registro["Nombre"]."</td";
+		$tabla.="td".$registro["Clave"]."</td";
+		$tabla.="td".$registro["TipoUsiario"]."</td";
+		$tabla.="td".$registro["</tr>"]."</td";
+	}
+	$tabla.="</table>";
+	print $tabla;
+	
+?>
