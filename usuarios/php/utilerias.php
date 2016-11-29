@@ -30,20 +30,31 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 
 function validaUsuario()
 {
+  $respuesta = false;
 	// Limpieza
-	//$u = $_POST[""];
-	$u = GetSQLValueString($_POST["Usuario"],"txt");
+	// $u = $_POST[""];
+	$u = GetSQLValueString($_POST["Usuario"], "txt");
 	// Limpieza
-	//$c = $_POST[""];
-	$u = GetSQLValueString($_POST["Clave"],"txt");
+	// $c = $_POST[""];
+	$u = GetSQLValueString($_POST["Clave"], "txt");
 	$conexion = mysql_connect("localhost", "root", "");
-	$consulta = sprintf("Select * From Usuario Where Usuario =%s And Clave=%s",);
+  // Conexion a la base de datos
+  mysql_select_db("bd2163")
+	$consulta = sprintf("Select Usuario, Clave From Usuario Where Usuario =%s And Clave=%s limit 1", $u, $c);
+  $resultado = mysql_query($consulta);
+  // Esperamos un solo resultado
+  if(mysql_num_rows($resultado) == 1)
+  {
+    $respuesta = true;
+  }
+  $arregloJSON = array('respuesta' => $respuesta);
+  print json_encode($arregloJSON);
 }
 // Menu principal
 $opc = $_POST["opcion"];
 switch ($opc) {
 	case 'value':
-		# code...
+		validaUsuario();
 		break;
 	
 	default:

@@ -11,6 +11,8 @@ var inicioUsuarios = function ()
 							"&usuario=" + usuario +
 							"&clave=" + clave +
 							"&id=" + Math.random();
+		// Validamos que no esten vacios
+		if (usuario!="" && clave!="") {
 		// Hacemos la peticion remota
 		$.ajax({
 			cache:false,
@@ -20,15 +22,21 @@ var inicioUsuarios = function ()
 			data: parametros,
 			success: function(response) {
 				// Si todo sale bien
+				// Esto no es optimo
+				//if (response.respuesta == true) {
+				if (response.respuesta) {
+					$("#entradaUsuario").hide();
+					$("nav").show();
+				}
+				else {
+					alert("Datos incorrectos :(")
+				}
 			},
 			error: function(xhr, ajaxOptions, thrownError) {
 				// Si todo sale mal
 			}
 		});
-		// Validamos que no esten vacios
-		if ("usuario!=") {
 
-		};
 	}
 	$("#btnValidaUsuario").on("click", validaUsuario);
 }
