@@ -24,12 +24,12 @@ var inicioUsuarios = function ()
 				// Si todo sale bien
 				// Esto no es optimo
 				//if (response.respuesta == true) {
-				if (response.respuesta) {
-					$("#entradaUsuario").hide();
-					$("nav").show();
+				if (response.respuesta == true) {
+					$("#entradaUsuario").hide("slow");
+					$("nav").show("slow");
 				}
 				else {
-					alert("Datos incorrectos :(")
+					alert("Datos incorrectos :(");
 				}
 			},
 			error: function(xhr, ajaxOptions, thrownError) {
@@ -38,6 +38,11 @@ var inicioUsuarios = function ()
 		});
 
 	}
+	else
+	{
+		alert("Usuario y clave son obligatorios")
+	}
+}
 	$("#btnValidaUsuario").on("click", validaUsuario);
 	var teclaClave = function(tecla)
 	{
@@ -45,8 +50,14 @@ var inicioUsuarios = function ()
 			validaUsuario(); // Funcion que valida al usuario
 		}
 	}
+	var Alta = function()
+	{
+		$("#artAltaUsuarios").show("slow");
+	}
 	// Keypress: se ejecuta cada vez que presiono una tecla sobre el input
 	$("#txtClave").on("keypress", teclaClave);
+	$("#btnAlta").on("click", Alta);
+	$("#btnGuardaUsuario").on("click", GuardaUsuario);
 }
 // Evento inicial
 $(document).on("ready", inicioUsuarios);

@@ -1,6 +1,7 @@
 
 <?php
 
+// Limpiar parametros contra ataques
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
   $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -61,3 +62,5 @@ switch ($opc) {
 		# code...
 		break;
 }
+
+?>
