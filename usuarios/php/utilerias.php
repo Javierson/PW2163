@@ -51,12 +51,31 @@ function validaUsuario()
   $arregloJSON = array('respuesta' => $respuesta);
   print json_encode($arregloJSON);
 }
+
+function buscaUsuario()
+{
+  $respuesta = false;
+  $u = GetSQLValueString($_POST["usuario"], "text");
+  $conexion = mysql_connect("localhost", "root", "");
+  mysql_select_db("bd2163");
+  $consulta = sprintf("Select * From Usuario Where Usuario=%s, $u")
+
+  if (mysql_num_rows($resultado) > 0)
+  {
+    $arregloJSON = array('respuesta' => $respuesta,)
+  }
+
+}
+
 // Menu principal
 $opc = $_POST["opcion"];
 switch ($opc) {
 	case 'value':
 		validaUsuario();
 		break;
+  case 'buscaUsuario':
+    buscaUsuario();
+    break;
 	
 	default:
 		# code...
@@ -64,3 +83,4 @@ switch ($opc) {
 }
 
 ?>
+

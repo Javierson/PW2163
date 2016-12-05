@@ -54,9 +54,55 @@ var inicioUsuarios = function ()
 	{
 		$("#artAltaUsuarios").show("slow");
 	}
+
+	var teclaUsuario = function(tecla)
+	{
+		if (tecla.which == 13) // Enter
+			{
+				var usuario = $("#txtUsuarioNombre").val();
+				var parametros = "opcion=buscarUsuario" +
+									"&usuario=" + usuario +
+									"&id="+Math.random();
+				$.ajax({
+					cache:false,
+					type:"POST",
+					dataType:"json",
+					url:"php/utilerias.php",
+					data:parametros,
+					success:function(response)
+					{
+						
+					}
+				})
+			}
+	}
+
+	var Alta = function()
+	{
+		$("h2").html("Alta de usuarios");
+		$("#artAltaUsuarios").show("slow");
+		// Escondo todos los botones
+		// contenidos en artAltaUsuarios
+		$("#artAltaUsuarios > button").hide();
+		$("#btnBajaUsuario").show();
+	}
+
+	var Cambio = function()
+	{
+		$("h2").html("Cambio de usuarios");
+		$("#artAltaUsuarios").show("slow");
+		// Escondo todos los botones
+		// contenidos en artAltaUsuarios
+		$("#artAltaUsuarios > button").hide();
+		$("#btnBajaUsuario").show();
+	}
+
 	// Keypress: se ejecuta cada vez que presiono una tecla sobre el input
 	$("#txtClave").on("keypress", teclaClave);
 	$("#btnAlta").on("click", Alta);
+	$("#btnBaja").on("click", Baja);
+	$("#btnCambio").on("click", Cambio);
+	$("#txtUsuarioNombre").on("keypress", teclaClave);
 	$("#btnGuardaUsuario").on("click", GuardaUsuario);
 }
 // Evento inicial

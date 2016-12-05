@@ -23,13 +23,13 @@
 				</li>
 				<li>
 					<button class="btn btn-primary" id="btnAlta">
-						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						<span class="glyphicon glyphicon-ok" aria-hidden="true" id="btnAlta"></span>
 						Alta
 					</button>
 				</li>
 				<li>
 					<button class="btn btn-danger">
-						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+						<span class="glyphicon glyphicon-remove" aria-hidden="true" id="btnBaja"></span>
 						Baja
 					</button>
 				</li>
@@ -67,9 +67,9 @@
 	<main>
 		<article id="artAltaUsuarios">
 			<h2>Alta de usuarios</h2>
-			<input type="text" id="txtUsuario" placeholder="Usuario" class="form-control">
+			<input type="text" id="txtUsuarioNombre" placeholder="Usuario" class="form-control">
 			<input type="text" id="txtNombre" placeholder="Nombre" class="form-control">
-			<input type="password" id="txtClave" placeholder="Clave" class="form-control">
+			<input type="password" id="txtClaveNombre" placeholder="Clave" class="form-control">
 			<select name="txtTipo" id="txtTipo" class="form-control">
 				<option value="ninguno">Seleccione una opción</option>
 				<option value="administrador">Administrador</option>
@@ -78,6 +78,12 @@
 			</select>
 			<button class="btn btn-success btn-lg btn-block" id="btnGuardaUsuario">
 				Guardar
+			</button>
+			<button class="btn btn-danger btn-lg btn-block" id="btnBajaUsuario">
+				Baja
+			</button>
+			<button class="btn btn-warning btn-lg btn-block" id="btnCambioUsuario">
+				Cambio
 			</button>
 		</article>
 	</main>
